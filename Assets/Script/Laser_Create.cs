@@ -6,58 +6,49 @@ using UnityEngine;
 //Original
 public class Laser_Create : MonoBehaviour {
 
-    public GameObject Laser_prefab;//Laser_prefabをインスペクターに用意
-    public GameObject Cube_prefab;
-    public static int collision = 0;
+    
     private int collision_time = 0;
-    
-    
+    private int create_raser = 16;
+    //private float speed = 0.5f;//弾速度
+    private Vector3[] hoge = { new Vector3(10f, 0f, 0f), new Vector3(5 * Mathf.Sqrt(3), 0f, 5f), new Vector3(5 * Mathf.Sqrt(2), 0f, 5 * Mathf.Sqrt(2)), new Vector3(5f, 0f, 5 * Mathf.Sqrt(3)), new Vector3(0f, 0f, 10f), new Vector3(-5f, 0f, 5 * Mathf.Sqrt(3)), new Vector3(-5 * Mathf.Sqrt(2), 0f, 5 * Mathf.Sqrt(2)), new Vector3(-5 * Mathf.Sqrt(3), 0f, 5f), new Vector3(-10f, 0f, 0), new Vector3(-5 * Mathf.Sqrt(3), 0f, -5f), new Vector3(-5 * Mathf.Sqrt(2), 0f, -5 * Mathf.Sqrt(2)), new Vector3(-5f, 0f, -5 * Mathf.Sqrt(3)), new Vector3(0f, 0f, -10f), new Vector3(5f, 0f, -5 * Mathf.Sqrt(3)), new Vector3(5 * Mathf.Sqrt(2), 0f, -5 * Mathf.Sqrt(2)), new Vector3(5 * Mathf.Sqrt(3), 0f, -5f) };
+
+
+    public GameObject Laser_prefab;
+    public static int collision = 0;
+
+
+    public static Laser_Create instance;
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
+
     void Start () {
         
     }
-	
+
+
 	void Update () {
-        if(collision==1 && collision_time==0)
+
+        //マウスを左クリックした時にレーザーを生成
+        if (Input.GetMouseButtonDown(0))
         {
-            GetComponent<Renderer>().material.color = new Color32(255, 0, 0, 120);//弾に当たったら赤に変更する
+
+            for (int i = 0; i < create_raser; i++)
+            {
+                GameObject l = Instantiate(Laser_prefab, this.transform.position, Quaternion.identity);//左クリック位置にレーザー生成
+                l.GetComponent<Rigidbody>().velocity = hoge[i];
+
+            }
+
+
         }
-        
-        if(collision==1)
-        {
-            collision_time++;
-        }
-
-        if(collision_time > 5)
-        {
-            collision = 0;
-            collision_time = 0;
-            GetComponent<Renderer>().material.color = new Color32(30, 255, 200, 120);//元の色に戻す
-        }
-
-        Vector3 touchScreenPosition = Input.mousePosition;//マウス座標を代入
-
-        touchScreenPosition.z = 3.6f;
-
-        Camera gameCamera = Camera.main;//カメラ取得
-        Vector3 touchWorldPosition = gameCamera.ScreenToWorldPoint(touchScreenPosition);//マウス座標をワールド座標に変換
-
-        Vector3 pos = transform.position;
-        pos.x = touchWorldPosition.x;
-        pos.y = touchWorldPosition.y;
-        pos.z = touchWorldPosition.z;
-
-        transform.position = pos;//プレイヤー表示座標
-
-
-        if (Input.GetMouseButton(0))//マウスを左クリックした時
-        {
-            touchScreenPosition.z = 5f;
-            touchWorldPosition = gameCamera.ScreenToWorldPoint(touchScreenPosition);
-            Debug.Log("LeftClick:" + touchWorldPosition);//取得座標表示
-           
-            Instantiate(Laser_prefab, touchWorldPosition , Quaternion.identity);//左クリック位置にレーザー生成
-        }
-        
 
     }
+
+    
 }
