@@ -7,11 +7,12 @@ using UnityEngine;
 public class Laser_move : MonoBehaviour {
 
     
-    private float moveX = 0f;
-    //private float moveZ = 0f;
     int randomNum;
     private int time = 0;
     private float speed = 1.0f;//弾速度
+
+    public GameObject originalLaser;
+    public GameObject GreenLaser;
 
     //変更点
     private Vector3 lastVelocity;//速度ベクトル
@@ -67,10 +68,10 @@ public class Laser_move : MonoBehaviour {
         {
             Vector3 refrectVec = Vector3.Reflect(this.lastVelocity, coll.contacts[0].normal);//反射ベクトル計算
             this.rb.velocity = refrectVec;
-            if (coll.gameObject.tag == "key")
+            if (coll.gameObject.name == "Key")
             {
-                //var trail_renderer = this.gameObject.GetComponent<TrailRenderer>();
-                //trail_renderer.colorGradient
+                originalLaser.SetActive(false);
+                GreenLaser.SetActive(true);
             }
             
         }

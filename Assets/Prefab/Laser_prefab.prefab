@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fa95a69d59df704c8843f38279d9079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originalLaser: {fileID: 1916492510347326}
+  GreenLaser: {fileID: 4662029161113274741}
 --- !u!54 &54409154416363362
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -309,12 +311,12 @@ GameObject:
   - component: {fileID: 4276240414789485823}
   - component: {fileID: 2340386884072966027}
   m_Layer: 6
-  m_Name: Laser_tail (1)
+  m_Name: Green_Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6379694202261496117
 Transform:
   m_ObjectHideFlags: 0
