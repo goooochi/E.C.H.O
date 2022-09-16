@@ -16,9 +16,8 @@ public class Laser_move_Player : MonoBehaviour {
     private Vector3 lastVelocity;//速度ベクトル
     private Rigidbody rb;//Rigidbody用
     
-
-
     public static Laser_move_Player instance;
+
     public void Awake()
     {
         if (instance == null)
@@ -59,6 +58,13 @@ public class Laser_move_Player : MonoBehaviour {
             {
                 originalLaser.SetActive(false);
                 greenLaser.SetActive(true);
+            }
+
+            if(coll.gameObject.name == "Enemy_01" || coll.gameObject.name == "Enemy_02")
+            {
+                Laser_Create_Enemy.instance.isChasing = true;
+                //Laser_Create_Enemy.instance.CreateEnemyLaser();
+                PatrolEnemyNavigator.instance.isEnemyListening = true;
             }
         }
 

@@ -6,7 +6,7 @@ public class FootPrintFadeout : MonoBehaviour
 {
 
     // フェードアウトするまでの時間(10sec)
-    public float fadeTime = 10f;
+    float fadeTime = 10f;
     private float time;
     private SpriteRenderer render;
 

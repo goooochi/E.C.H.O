@@ -28,19 +28,19 @@ public class Laser_Create_Player : MonoBehaviour {
 
 	void Update () {
 
-        //マウスを左クリックした時にレーザーを生成
-        if (Input.GetMouseButtonDown(0))
+        
+
+
+    }
+
+    public void PlayerLaserCreate()
+    {
+        for (int i = 0; i < Laser_direction.Length; i++)
         {
-
-            for (int i = 0; i < Laser_direction.Length; i++)
-            {
-                GameObject l = Instantiate(Laser_prefab, this.transform.position + new Vector3(0,0.2f,0), Quaternion.identity);//左クリック位置にレーザー生成
-                l.GetComponent<Rigidbody>().velocity = Laser_direction[i];
-
-            }
+            GameObject l = Instantiate(Laser_prefab, this.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);//左クリック位置にレーザー生成
+            l.GetComponent<Rigidbody>().velocity = Laser_direction[i];
 
         }
-
     }
 
 }
