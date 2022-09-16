@@ -4,15 +4,13 @@ using System.Linq;
 using UnityEngine;
 
 //Original
-public class Laser_move : MonoBehaviour {
+public class Laser_move_Player : MonoBehaviour {
 
     
-    int randomNum;
     private int time = 0;
-    private float speed = 1.0f;//弾速度
 
     public GameObject originalLaser;
-    public GameObject GreenLaser;
+    public GameObject greenLaser;
 
     //変更点
     private Vector3 lastVelocity;//速度ベクトル
@@ -20,7 +18,7 @@ public class Laser_move : MonoBehaviour {
     
 
 
-    public static Laser_move instance;
+    public static Laser_move_Player instance;
     public void Awake()
     {
         if (instance == null)
@@ -32,14 +30,6 @@ public class Laser_move : MonoBehaviour {
 
     void Start () {
         rb = GetComponent<Rigidbody>();
-        //moveX = Random.Range(-10.0f, 10.0f) * speed;
-        //moveZ = Random.Range(-10.0f, 10.0f) * speed;
-        //randomNum = Laser_Create.instance.hoge_index[Random.Range(0, Laser_Create.instance.hoge_index.Length)];
-
-        //9/14 他スクリプトに配列を用意し、配列の要素を取得。その配列番号も取得時に同時に消す。
-        //rb.velocity = Laser_Create.instance.hoge[Laser_Create.instance.k % Laser_Create.instance.hoge.Length];
-        
-
         
     }
 	
@@ -59,33 +49,24 @@ public class Laser_move : MonoBehaviour {
     }
 
 
-
-
-
     private void OnCollisionEnter(Collision coll)
     {
         if (coll.gameObject.tag == "Cube")//壁と当たった時
         {
             Vector3 refrectVec = Vector3.Reflect(this.lastVelocity, coll.contacts[0].normal);//反射ベクトル計算
             this.rb.velocity = refrectVec;
-            if (coll.gameObject.name == "Key")
+            if(coll.gameObject.name == "Key")
             {
                 originalLaser.SetActive(false);
-                GreenLaser.SetActive(true);
+                greenLaser.SetActive(true);
             }
-            
         }
-        if (coll.gameObject.tag == "Cube_Destroy")//破壊出来る壁に当たった時
-        {
-            Destroy(coll.gameObject);//壁削除
-            Vector3 refrectVec = Vector3.Reflect(this.lastVelocity, coll.contacts[0].normal);//反射ベクトル計算
-            this.rb.velocity = refrectVec;
-        }
+
         if (coll.gameObject.tag == "Player_Cube")//プレイヤーと当たった時
         {
             Vector3 refrectVec = Vector3.Reflect(this.lastVelocity, coll.contacts[0].normal);//反射ベクトル計算
             this.rb.velocity = refrectVec;
-            Laser_Create.collision = 1;//赤く光らせる用
+            Laser_Create_Player.collision = 1;//赤く光らせる用
         }
 
         

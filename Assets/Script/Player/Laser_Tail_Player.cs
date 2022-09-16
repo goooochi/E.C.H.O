@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Original
-public class Laser_Tail : MonoBehaviour {
+public class Laser_Tail_Player : MonoBehaviour {
     private int time;//経過フレーム用
 	
 	void Start () {
@@ -11,6 +11,7 @@ public class Laser_Tail : MonoBehaviour {
 	}
 	
 	void Update () {
+
         time++;
         if(time>60)//60フレーム後に削除
         {

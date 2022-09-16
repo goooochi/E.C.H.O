@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 54409154416363362}
   - component: {fileID: 65908810793195394}
   m_Layer: 6
-  m_Name: Laser_prefab
+  m_Name: Laser_prefab_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalLaser: {fileID: 1916492510347326}
-  GreenLaser: {fileID: 4662029161113274741}
+  greenLaser: {fileID: 4662029161113274741}
 --- !u!54 &54409154416363362
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 96188131088332118}
   - component: {fileID: 114170676709919886}
   m_Layer: 6
-  m_Name: Laser_tail
+  m_Name: Laser_tail_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
