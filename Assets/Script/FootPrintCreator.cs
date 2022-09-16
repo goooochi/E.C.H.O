@@ -27,32 +27,39 @@ public class FootPrintCreator : MonoBehaviour
         {
             Vector3 velocity = gameObject.transform.rotation * new Vector3(0, 0, 5);
             gameObject.transform.position += velocity * Time.deltaTime;
+            animator.SetBool("Walking", true);
 
-            if (RightFootPrinting)
-            {
-                this.time_right += Time.deltaTime;
-                if (this.time_right > 0.6f)
-                {
-                    this.time_right = 0;
-                    Instantiate(footStepRight, transform.position, transform.rotation);
-                    RightFootPrinting = false;
-                    LeftFootPrinting = true;
-                }
-            }
+            //if (RightFootPrinting)
+            //{
+            //    this.time_right += Time.deltaTime;
+            //    if (this.time_right > 0.6f)
+            //    {
+            //        this.time_right = 0;
+            //        Instantiate(footStepRight, transform.position, transform.rotation);
+            //        RightFootPrinting = false;
+            //        LeftFootPrinting = true;
+            //    }
+            //}
 
-            if (LeftFootPrinting)
-            {
-                this.time_left += Time.deltaTime;
-                if (this.time_left > 0.6f)
-                {
-                    this.time_left = 0;
-                    Instantiate(footStepLeft, transform.position, transform.rotation);
-                    LeftFootPrinting = false;
-                    RightFootPrinting = true;
-                }
-            }
+            //if (LeftFootPrinting)
+            //{
+            //    this.time_left += Time.deltaTime;
+            //    if (this.time_left > 0.6f)
+            //    {
+            //        this.time_left = 0;
+            //        Instantiate(footStepLeft, transform.position, transform.rotation);
+            //        LeftFootPrinting = false;
+            //        RightFootPrinting = true;
+            //    }
+            //}
+
+
+        }
+        else
+        {
             
-
+            animator.SetBool("Walking", false);
+            rb.velocity = Vector3.zero;
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -67,13 +74,7 @@ public class FootPrintCreator : MonoBehaviour
 
 
 
-        else
-        {
-            //animator.SetBool("Next", false);
-        }
-
-
-        rb.velocity = Vector3.zero;
+        
 
     }
 

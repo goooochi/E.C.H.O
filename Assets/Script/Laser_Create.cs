@@ -40,7 +40,7 @@ public class Laser_Create : MonoBehaviour {
 
             for (int i = 0; i < create_raser; i++)
             {
-                GameObject l = Instantiate(Laser_prefab, this.transform.position, Quaternion.identity);//左クリック位置にレーザー生成
+                GameObject l = Instantiate(Laser_prefab, this.transform.position + new Vector3(0,0.2f,0), Quaternion.identity);//左クリック位置にレーザー生成
                 l.GetComponent<Rigidbody>().velocity = hoge[i];
 
             }
