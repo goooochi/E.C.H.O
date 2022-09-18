@@ -45,6 +45,15 @@ public class FootPrintCreator : MonoBehaviour
 
     }
 
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Key")
+        {
+            Destroy(collision.gameObject);
+            GameClear.instance.OpenDoor();
+        }
+    }
+
     void FootStepRight()
     {
         Instantiate(footStepRight, transform.position, transform.rotation);

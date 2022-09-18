@@ -42,6 +42,7 @@ public class GameOverController : MonoBehaviour
         if(collision.gameObject.name == "Enemy_01" || collision.gameObject.name == "Enemy_02")
         {
             GameOver();
+
             isPlaying = false;
         }
     }
