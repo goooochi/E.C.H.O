@@ -10,7 +10,7 @@ public class Laser_move_Player : MonoBehaviour {
     private int time = 0;
 
     public GameObject originalLaser;
-    public GameObject greenLaser;
+    //public GameObject greenLaser;
 
     //変更点
     private Vector3 lastVelocity;//速度ベクトル
@@ -56,14 +56,12 @@ public class Laser_move_Player : MonoBehaviour {
             this.rb.velocity = refrectVec;
             if(coll.gameObject.name == "Key")
             {
-                originalLaser.SetActive(false);
-                greenLaser.SetActive(true);
+                Laser_Create_Item_Goal.instance.CreateItemLaser();
             }
 
             if(coll.gameObject.name == "Enemy_01" || coll.gameObject.name == "Enemy_02")
             {
                 Laser_Create_Enemy.instance.isChasing = true;
-                //Laser_Create_Enemy.instance.CreateEnemyLaser();
                 PatrolEnemyNavigator.instance.isEnemyListening = true;
             }
         }
