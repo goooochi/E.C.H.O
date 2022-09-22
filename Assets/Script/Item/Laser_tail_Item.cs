@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Laser_tail_Item_Goal : MonoBehaviour
+public class Laser_tail_Item: MonoBehaviour
 {
     private int time;//経過フレーム用
 
@@ -16,7 +16,7 @@ public class Laser_tail_Item_Goal : MonoBehaviour
     void Update()
     {
         time++;
-        if (time > 6)//60フレーム後に削除
+        if (time > 60)//60フレーム後に削除
         {
             Destroy(gameObject);
         }

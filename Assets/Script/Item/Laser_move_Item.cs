@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Laser_move_Item_Goal : MonoBehaviour
+public class Laser_move_Item: MonoBehaviour
 {
 
     private int time = 0;
@@ -17,7 +17,7 @@ public class Laser_move_Item_Goal : MonoBehaviour
     void Update()
     {
         time++;
-        if (time > 6)//5フレーム後に弾削除
+        if (time > 60)//5フレーム後に弾削除
         {
             transform.DetachChildren();//親オブジェクトから子オブジェクトを解除
             Destroy(gameObject);//弾削除

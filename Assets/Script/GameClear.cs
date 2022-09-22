@@ -39,7 +39,6 @@ public class GameClear : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        Debug.Log("Syun");
         if(collision.gameObject.layer == 9)
         {
             gameClearUI.SetActive(true);

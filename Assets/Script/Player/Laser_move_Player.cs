@@ -54,12 +54,19 @@ public class Laser_move_Player : MonoBehaviour {
         {
             Vector3 refrectVec = Vector3.Reflect(this.lastVelocity, coll.contacts[0].normal);//反射ベクトル計算
             this.rb.velocity = refrectVec;
+
             if(coll.gameObject.name == "Key")
             {
-                Laser_Create_Item_Goal.instance.CreateItemLaser();
+                Debug.Log("This is Key");
+                Laser_Create_Item.instance.CreateItemLaser();
             }
 
-            if(coll.gameObject.name == "Enemy_01" || coll.gameObject.name == "Enemy_02")
+            if (coll.gameObject.name == "ClearJudge")
+            {
+                Laser_Create_Goal.instance.CreateGoalLaser();
+            }
+
+            if (coll.gameObject.name == "Enemy_01" || coll.gameObject.name == "Enemy_02")
             {
                 Laser_Create_Enemy.instance.isChasing = true;
                 PatrolEnemyNavigator.instance.isEnemyListening = true;

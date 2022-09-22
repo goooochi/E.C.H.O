@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4383437870620628}
   - component: {fileID: 33547576763181652}
   - component: {fileID: 23809166561378370}
-  - component: {fileID: 114503465662628890}
   - component: {fileID: 54409154416363362}
+  - component: {fileID: 114503465662628890}
   - component: {fileID: 65908810793195394}
   m_Layer: 6
   m_Name: Laser_prefab_Player
@@ -85,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &114503465662628890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450584830110524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fa95a69d59df704c8843f38279d9079, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  originalLaser: {fileID: 1916492510347326}
 --- !u!54 &54409154416363362
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -114,6 +101,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &114503465662628890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450584830110524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa95a69d59df704c8843f38279d9079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalLaser: {fileID: 1916492510347326}
 --- !u!65 &65908810793195394
 BoxCollider:
   m_ObjectHideFlags: 0

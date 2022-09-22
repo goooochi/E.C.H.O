@@ -9,11 +9,13 @@ public class FootPrintFadeout : MonoBehaviour
     float fadeTime = 10f;
     private float time;
     private SpriteRenderer render;
+    private GameObject parent;
 
     // Start is called before the first frame update
     void Start()
     {
         render = GetComponent<SpriteRenderer>();
+        parent = transform.parent.gameObject;
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class FootPrintFadeout : MonoBehaviour
         }
         else
         {
+            Destroy(parent);
             Destroy(gameObject);
         }
     }

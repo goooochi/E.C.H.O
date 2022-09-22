@@ -507,8 +507,9 @@ GameObject:
   - component: {fileID: 49691879}
   - component: {fileID: 49691878}
   - component: {fileID: 49691882}
+  - component: {fileID: 49691883}
   m_Layer: 0
-  m_Name: GameClearJudgeCube
+  m_Name: ClearJudge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -605,6 +606,19 @@ MonoBehaviour:
   leftDoor: {fileID: 1152527791}
   rightDoor: {fileID: 2108486950}
   gameClearUI: {fileID: 2100220424}
+--- !u!114 &49691883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49691877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f452a91bd70374a7384ed4a83a9c90d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Laser_prefab_Goal: {fileID: 7457350430927109901, guid: e204def3a1baf41079c3fc7ce226f4d4, type: 3}
 --- !u!1001 &54363126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4005,7 +4019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -79.9
+      value: -141.1
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4013,7 +4027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 62.1
+      value: 57.2
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8749,7 +8763,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833038345}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -8761,7 +8775,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f3fc7fc4b623f11449d9260feed6e510, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8799,8 +8813,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833038345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -145.9, y: 3.07, z: 68.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -147.8, y: 2.897, z: 68.3}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -8818,7 +8832,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Laser_prefab_Item: {fileID: 7640318207155115458, guid: 51705ef829885420a80deb9b45cf9562, type: 3}
-  Laser_prefab_Goal: {fileID: 7457350430927109901, guid: e204def3a1baf41079c3fc7ce226f4d4, type: 3}
 --- !u!1001 &852384114
 PrefabInstance:
   m_ObjectHideFlags: 0
