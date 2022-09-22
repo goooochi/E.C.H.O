@@ -14,7 +14,7 @@ public class PatrolEnemyNavigator : MonoBehaviour
     public GameObject player;
     float distance;
     public bool isEnemyListening = false;
-    [SerializeField] float quitRange = 2f;
+    [SerializeField] float quitRange = 10f;
     [SerializeField] bool tracking = false;
 
 

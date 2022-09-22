@@ -8,12 +8,14 @@ public class FootPrintCreator : MonoBehaviour
     public GameObject footStepLeft;
     private Animator animator;
     Rigidbody rb;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -58,11 +60,13 @@ public class FootPrintCreator : MonoBehaviour
     {
         Instantiate(footStepRight, transform.position, transform.rotation);
         Laser_Create_Player.instance.PlayerLaserCreate();
+        audioSource.Play();
     }
 
     void FootStepLeft()
     {
         Instantiate(footStepLeft, transform.position, transform.rotation);
         Laser_Create_Player.instance.PlayerLaserCreate();
+        audioSource.Play();
     }
 }

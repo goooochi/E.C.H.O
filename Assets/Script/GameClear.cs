@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameClear : MonoBehaviour
 {
     public GameObject leftDoor;
     public GameObject rightDoor;
     public GameObject gameClearUI;
+    float time = 0;
+    public Text scoreText;
 
     public static GameClear instance;
+
 
     public void Awake()
     {
@@ -27,7 +31,7 @@ public class GameClear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        time += Time.deltaTime;
     }
 
     public void OpenDoor()
@@ -42,6 +46,7 @@ public class GameClear : MonoBehaviour
         if(collision.gameObject.layer == 9)
         {
             gameClearUI.SetActive(true);
+            scoreText.text = "Time : " + time.ToString();
         }
 
     }
