@@ -53,6 +53,7 @@ public class FootPrintCreator : MonoBehaviour
         {
             Destroy(collision.gameObject);
             GameClear.instance.OpenDoor();
+            Compass.instance.destination = GameObject.Find("ClearJudge").transform;
         }
     }
 
