@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameClear : MonoBehaviour
 {
@@ -49,5 +50,16 @@ public class GameClear : MonoBehaviour
             scoreText.text = "Time : " + time.ToString();
         }
 
+    }
+
+    public void ToHome()
+    {
+        Debug.Log("Title");
+        SceneManager.LoadScene("Title");
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("Main");
     }
 }

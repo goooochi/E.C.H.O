@@ -13,9 +13,8 @@ public class PatrolEnemyNavigator : MonoBehaviour
     Vector3 playerPos;
     public GameObject player;
     float distance;
-    public bool isEnemyListening = false;
     [SerializeField] float quitRange = 10f;
-    [SerializeField] bool tracking = false;
+    [SerializeField] public bool tracking = false;
 
 
     public static PatrolEnemyNavigator instance;
@@ -48,11 +47,12 @@ public class PatrolEnemyNavigator : MonoBehaviour
 
         if (tracking)
         {
+            Debug.Log("tracking");
             //追跡の時、quitRangeより距離が離れたら中止
             if (distance > quitRange)
             {
+                Debug.Log("quitRange");
                 tracking = false;
-                isEnemyListening = false;
                 Laser_Create_Enemy.instance.isChasing = false;
             }
                 
@@ -61,11 +61,6 @@ public class PatrolEnemyNavigator : MonoBehaviour
         }
         else
         {
-            //EnemyがPlayerの足音を聞いたら
-            if (isEnemyListening)
-            {
-                tracking = true;
-            }
                 
             // エージェントが現目標地点に近づいてきたら、次の目標地点を選択
             if (!agent.pathPending && agent.remainingDistance < 0.5f)

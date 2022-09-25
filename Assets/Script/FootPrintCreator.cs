@@ -49,7 +49,7 @@ public class FootPrintCreator : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "Key")
+        if(collision.gameObject.name == "Key(Clone)")
         {
             Destroy(collision.gameObject);
             GameClear.instance.OpenDoor();

@@ -26,15 +26,7 @@ public class GameOverController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isPlaying)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                SceneManager.LoadScene("Main");
-                isPlaying = false;
-            }
-        }
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
