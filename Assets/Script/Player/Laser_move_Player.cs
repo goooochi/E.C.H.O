@@ -57,12 +57,12 @@ public class Laser_move_Player : MonoBehaviour {
 
             if(coll.gameObject.name == "Key(Clone)")
             {
-                Debug.Log("This is Key");
                 Laser_Create_Item.instance.CreateItemLaser();
             }
 
             if (coll.gameObject.name == "ClearJudge")
             {
+                Debug.Log("This is ClearJudge Cube");
                 Laser_Create_Goal.instance.CreateGoalLaser();
             }
 
