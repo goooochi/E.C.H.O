@@ -33,17 +33,7 @@ public class Compass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //var qrot = Quaternion.LookRotation(destination.position - player.position);
-        //rt.rotation = new Quaternion(0,0 , -qrot.y, qrot.w);
-
-
-        //var forward = transform.TransformDirection(Vector3.forward);
-        //var targetDirection = destination.transform.position - transform.position;
-        //var angle = Vector3.Angle(forward, targetDirection);
-
-        //Debug.Log(angle);
-        //rt.transform.rotation = Quaternion.AngleAxis(angle,Vector3.forward);
-
+        
 
         var diff = destination.position - player.position;
 
