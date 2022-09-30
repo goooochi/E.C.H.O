@@ -47,6 +47,7 @@ public class GameClear : MonoBehaviour
         if(collision.gameObject.layer == 9)
         {
             gameClearUI.SetActive(true);
+            ExplanationSceneController.instance.isGoal = true;
             scoreText.text = "Time : " + time.ToString();
         }
 

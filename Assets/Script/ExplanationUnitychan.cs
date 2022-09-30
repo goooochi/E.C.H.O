@@ -24,7 +24,6 @@ public class ExplanationUnitychan : MonoBehaviour
             Destroy(collision.gameObject);
             ExplanationSceneController.instance.isGetKey = true;
             Compass.instance.destination = GameObject.Find("ClearJudge").transform;
-
         }
     }
 }

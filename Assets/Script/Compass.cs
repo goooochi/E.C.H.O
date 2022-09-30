@@ -41,7 +41,6 @@ public class Compass : MonoBehaviour
 
         var angle = Vector3.Angle(player.forward, diff)* (axis.y < 0 ? -1 : 1);
 
-        Debug.Log(angle);
         rt.transform.rotation = Quaternion.AngleAxis(-angle,Vector3.forward);
     }
 }

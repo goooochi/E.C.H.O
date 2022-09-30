@@ -22,6 +22,10 @@ public class ExplanationSceneController : MonoBehaviour
     private float time;
 
     public bool isGetKey = false;
+    bool isThereAreEnemy = true;
+    public bool isGoal = false;
+
+    public Transform enemyCreatePosition;
 
     public static ExplanationSceneController instance;
 
@@ -56,7 +60,7 @@ public class ExplanationSceneController : MonoBehaviour
             Fase1.SetActive(false);
         }
 
-        if(unityChan.gameObject.transform.position.x > 11 && unityChan.gameObject.transform.position.x < 20)
+        if(unityChan.gameObject.transform.position.x > 20 && unityChan.gameObject.transform.position.x < 40)
         {
             Fase2.SetActive(true);
         }
@@ -77,13 +81,28 @@ public class ExplanationSceneController : MonoBehaviour
         if (isGetKey && unityChan.gameObject.transform.position.x > 100 && unityChan.gameObject.transform.position.x < 120)
         {
             mainCamera.cullingMask = (1 << 6) + (1 << 8);
-            //mainCamera.cullingMask = 8;
-            enemy.gameObject.SetActive(true);
+
+            if (isThereAreEnemy)
+            {
+                Debug.Log("AAA");
+                enemy.SetActive(true);
+                //Instantiate(enemy, enemyCreatePosition.position, Quaternion.identity);
+                isThereAreEnemy = false;
+            }
+            
             Fase4.SetActive(true);
         }
         else
         {
             Fase4.SetActive(false);
+        }
+
+        if (isGoal)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                SceneManagement.instance.ToHome();
+            }
         }
 
 
