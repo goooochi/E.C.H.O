@@ -34,7 +34,10 @@ public class GameOverController : MonoBehaviour
         if(collision.gameObject.name == "Enemy_01" || collision.gameObject.name == "Enemy_02")
         {
             GameOver();
-
+            if (SceneManager.GetActiveScene().name == "Explanation")
+            {
+                //ExplanationSceneController.instance.unityChan.transform.position = new Vector3()
+            }
             isPlaying = false;
         }
     }
